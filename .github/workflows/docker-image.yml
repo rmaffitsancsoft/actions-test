@@ -26,7 +26,7 @@ jobs:
       uses: aws-actions/amazon-ecr-login@v1
     
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag 545979749663.dkr.ecr.us-east-1.amazonaws.com/dyad/test:latest
+      run: docker build . --file Dockerfile --tag 545979749663.dkr.ecr.us-east-1.amazonaws.com/dyad/test:$GITHUB_REF_NAME
     
     - name: Push the Docker image
-      run: docker push 545979749663.dkr.ecr.us-east-1.amazonaws.com/dyad/test:latest
+      run: docker push 545979749663.dkr.ecr.us-east-1.amazonaws.com/dyad/test:$GITHUB_REF_NAME
